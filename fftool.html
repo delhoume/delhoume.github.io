@@ -79,7 +79,7 @@ RTD_01+9 12+7 21+2 25 SPACE_02 TLS_01+8 VLMO_01+2 VRS_01+ 04+15 21+ 34+3 40+2</t
         ccount.innerHTML = "Bytes: " + flashfile.value.length;
         dcount.innerHTML = "Bytes: " + flatfile.value.length;
         qrcode.clear(); // clear the code.
-        qrcode.makeCode(flashfile.value);
+        qrcode.makeCode("text:"+ flashfile.value);
     }
     function decodeF() {
         let encoded = flashfile.value;
