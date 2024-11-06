@@ -80,7 +80,8 @@ RTD_01+9 12+7 21+2 25 SPACE_02 TLS_01+8 VLMO_01+2 VRS_01+ 04+15 21+ 34+3 40+2</t
         dcount.innerHTML = "Bytes: " + flatfile.value.length;
         qrcode.clear(); // clear the code.
         let url_encoded = encodeURIComponent(flashfile.value);
-        let qrcode_contents = `http://vliv.freeboxos.fr:52000/flashfile?contents=${url_encoded}`;
+        let qrcode_contents = `https://vliv.freeboxos.fr:52000/flashfile?contents=${url_encoded}`;
+        console.log(qrcode_contents.length, qrcode_contents);
         qrcode.makeCode(qrcode_contents);
     }
     function decodeF() {
