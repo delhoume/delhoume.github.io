@@ -91,7 +91,9 @@ RTD_01+9 12+7 21+2 25 SPACE_02 TLS_01+8 VLMO_01+2 VRS_01+ 04+15 21+ 34+3 40+2</t
     function encodeF() {
         let flat = flatfile.value;
         let encoded = flashfileParser.encodeString(flat, keep_order.checked);
-        flashfile.value = encoded.join(" ");
+        let contents = encoded.join(" ");
+        let url_encoded = encodeURI(contents);
+        flashfile.value = `http://vliv.freeboxos.fr:52000/flashfile?contents=${url_encoded}`;
         updateCounts();
     }
     updateCounts();
